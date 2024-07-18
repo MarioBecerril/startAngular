@@ -1,0 +1,29 @@
+<div class="clients-list row">
+  <div class="col-12 col-sm-6 col-md-4" *ngFor="let client of arrClients; trackBy: trackByClientId">
+    <div class="m-2 card my-2">
+      <div class="card-body">
+        <h5 class="card-title">{{client.name}} {{client.username}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{client.email}}</h6>
+        <p class="card-text">{{client.website}}</p>
+        <p class="card-text">{{client.phone}}</p>
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-outline-primary btn-sm mr-2" (click)="editClient(client.id)">
+            <i class="bi bi-pencil-square"></i> Edit
+          </button>
+          <button class="btn btn-outline-danger btn-sm" (click)="confirmDeleteClient(client.id)">
+            <i class="bi bi-trash"></i> Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Dialog -->
+<div *ngIf="showConfirmDialog" class="confirm-dialog">
+  <div class="confirm-dialog-content">
+    <p>Are you sure you want to {{ actionType }} client with ID: {{ selectedClientId }}?</p>
+    <button class="btn btn-danger" (click)="performAction()">Yes</button>
+    <button class="btn btn-secondary" (click)="cancelAction()">No</button>
+  </div>
+</div>

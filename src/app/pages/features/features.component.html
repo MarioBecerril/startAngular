@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Website</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of arrClients; trackBy: trackByClientId">
+          <td>{{client.id}}</td>
+          <td>{{client.name}}</td>
+          <td>{{client.username}}</td>
+          <td>{{client.email}}</td>
+          <td>{{client.website}}</td>
+          <td>{{client.phone}}</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm mr-2" (click)="editClient(client.id)">
+              <i class="bi bi-pencil-square"></i> Edit
+            </button>
+            <button class="btn btn-outline-danger btn-sm" (click)="confirmDeleteClient(client.id)">
+              <i class="bi bi-trash"></i> Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- Confirm Dialog -->
+  <div *ngIf="showConfirmDialog" class="confirm-dialog">
+    <div class="confirm-dialog-content">
+      <p>Are you sure you want to {{ actionType }} client with ID: {{ selectedClientId }}?</p>
+      <button class="btn btn-danger" (click)="performAction()">Yes</button>
+      <button class="btn btn-secondary" (click)="cancelAction()">No</button>
+    </div>
+  </div>
+  

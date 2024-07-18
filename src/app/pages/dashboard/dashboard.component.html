@@ -1,0 +1,98 @@
+<div class="container mt-4">
+    <h4>Dashboard para {{username}} </h4>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5>Total Revenue:</h5>
+            <h3>${{ totalRevenue.toFixed(2) }}</h3>
+            <p>From Jan 20,2022 to July,2022</p>
+            <p>Net Profit: ${{ netProfit.toFixed(2) }}</p>
+            <p>Net Revenue: ${{ netRevenue.toFixed(2) }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <h5>Order Stats</h5>
+            <div class="row">
+              <div class="col-md-4">
+                <p>Order Completed: {{ orderStats.completed }}</p>
+              </div>
+              <div class="col-md-4">
+                <p>Order Processing: {{ orderStats.processing }}</p>
+              </div>
+              <div class="col-md-4">
+                <p>Order Canceled: {{ orderStats.canceled }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>Sales By Social Source</h5>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Source</th>
+                  <th>Sales</th>
+                  <th>Revenue</th>
+                  <th>Growth</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let sale of salesBySource">
+                  <td>{{ sale.source }} ({{ sale.category }})</td>
+                  <td>{{ sale.sales }}</td>
+                  <td>${{ sale.revenue.toFixed(2) }}</td>
+                  <td [ngClass]="{'text-success': sale.growth > 0, 'text-danger': sale.growth < 0}">{{ sale.growth }}%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5>Product Tracking</h5>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let product of productTracking">
+                <strong>{{ product.status }}</strong>: {{ product.description }}<br>
+                <small>{{ product.date }} - {{ product.time }}</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5>Best Selling Products</h5>
+            <div class="row">
+              <div class="col-md-6" *ngFor="let product of bestSellingProducts">
+                <div class="card">
+                  <img [src]="product.image" (click)="greet()" class="card-img-top small-img" alt="{{ product.name }}">
+                  <div class="card-body">
+                    <h6>{{ product.name }}</h6>
+                    <p><strong>${{ product.price.toFixed(2) }}</strong> <span class="text-muted"><s>${{ product.originalPrice.toFixed(2) }}</s></span></p>
+                    <button class="btn btn-primary">Buy Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
