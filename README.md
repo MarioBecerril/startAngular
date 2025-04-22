@@ -1,27 +1,61 @@
-# StartAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
+# 🧭 Panel de Administración - Angular
 
-## Development server
+Este proyecto es un **panel de administración** desarrollado con **Angular**.
+  Implementa funcionalidades de autenticación, autorización, manejo de sesiones, componentes standalone y un CRUD completo de clientes.
+  Ideal como base para sistemas administrativos escalables.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📦 Repositorio
 
-## Code scaffolding
+🔗 [GitHub - MarioBecerril/startAngular](https://github.com/MarioBecerril/startAngular)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🚀 Características Principales
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- 🔐 **Autenticación y Autorización**  
+  Uso de **Auth Guards** para proteger rutas privadas y gestión de sesiones con **tokens almacenados en localStorage**.
 
-## Running unit tests
+- 🧱 **Componentes Standalone**  
+  Enfoque modular y reutilizable, facilitando el mantenimiento y la escalabilidad del proyecto.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- 📋 **CRUD de Clientes**  
+  Funcionalidades completas de creación, lectura, actualización y eliminación, con validaciones de formularios incluidas.
 
-## Running end-to-end tests
+- ✅ **Validaciones Reactivas**  
+  Validaciones integradas para mejorar la experiencia de usuario y evitar errores en tiempo real.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- 💡 **Requisitos**  
+  - Node.js: 18  
+  - Angular CLI instalado globalmente  
 
-## Further help
+- 👤 **Credenciales de Prueba**  
+  - Usuario: `useradmin`  
+  - Contraseña: `passadmin`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+## 🛠️ Instalación y Configuración Local
+
+Sigue estos pasos para correr el proyecto en tu máquina local:
+
+1. **Clonar el repositorio**  
+   ```bash
+   git clone https://github.com/MarioBecerril/startAngular.git
+   cd startAngular
+   ```
+
+2. **Instalar las dependencias**  
+   ```bash
+   npm install
+   ```
+
+3. **Iniciar el servidor de desarrollo**  
+   ```bash
+   ng serve
+   ```
+
+4. **Abrir en el navegador**  
+   Dirígete a `http://localhost:4200`
+
+---
